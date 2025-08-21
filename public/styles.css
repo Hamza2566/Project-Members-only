@@ -1,0 +1,81 @@
+:root {
+  /* ============================
+     🎨 Brand Colors
+     ============================ */
+  --primary: #2a5298;   /* Main brand color (buttons, links, highlights) */
+  --secondary: #f39c12; /* Secondary color (accents, hover states) */
+  --accent: #27ae60;    /* Accent color (extra highlights, small details) */
+
+  /* ============================
+     🖼️ Backgrounds
+     ============================ */
+  --background-light: #f9f9f9; /* Main page background */
+  --background-dark: #1f2937;  /* Dark sections / footers */
+  --section-bg: #ffffff;       /* Content sections background */
+
+  /* ============================
+     ✍️ Text Colors
+     ============================ */
+  --text-dark: #2e2e2e;   /* Main text (instead of black) */
+  --text-medium: #555555; /* Paragraphs, secondary info */
+  --text-light: #777777;  /* Subtle text, placeholders */
+
+  /* ============================
+     🧩 Borders & Dividers
+     ============================ */
+  --border-light: #e0e0e0; /* Light gray borders */
+  --border-dark: #444444;  /* Dark borders for contrast */
+
+  /* ============================
+     ⚡ Status & Feedback Colors
+     ============================ */
+  --success: #4caf50; /* Success messages / confirmed actions */
+  --warning: #ff9800; /* Warnings / attention */
+  --error: #e74c3c;   /* Errors / alerts */
+  --info: #3498db;    /* Information / hints */
+}
+
+*{
+    background-color: var(--background-light);
+    /* margin: 0; */
+    padding: 0;
+}
+header{
+       background-color: var(--background-dark);
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem;
+    border-radius: 10px;
+}
+header > * {
+    margin: 0 5%;
+
+}
+img{
+    max-width: 100%;
+    height: 10vh;
+    background-color: var(--background-dark);
+}
+.logo{
+    width: 20%;
+    background-color: var(--background-dark);
+}
+.nav{
+    background-color: var(--background-dark);
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.nav > *{
+    background-color: var(--background-dark);
+    text-decoration: none;
+    font-size: 1.7rem;
+    
+    
+
+}

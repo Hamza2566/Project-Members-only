@@ -10,13 +10,5 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
 });
-(async () => {
-  try {
-    const res = await pool.query("SELECT NOW()");
-    console.log("✅ Database connected successfully at:", res.rows[0].now);
-  } catch (err) {
-    console.error("❌ Database connection error:", err.message);
-  }
-})();
 
 export default pool;
