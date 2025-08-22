@@ -1,81 +1,184 @@
 :root {
-  /* ============================
-     🎨 Brand Colors
-     ============================ */
-  --primary: #2a5298;   /* Main brand color (buttons, links, highlights) */
-  --secondary: #f39c12; /* Secondary color (accents, hover states) */
-  --accent: #27ae60;    /* Accent color (extra highlights, small details) */
+  /* 🎨 MAIN COLORS
+     These are the main colors you use for buttons, links, and highlights */
+  --primary:       #1F6F8B;  /* main color (deep teal) */
+  --primary-hover: #145C70;  /* slightly darker teal when you hover */
+  --primary-contrast: #E0F7FA; /* light color for text on primary buttons */
 
-  /* ============================
-     🖼️ Backgrounds
-     ============================ */
-  --background-light: #f9f9f9; /* Main page background */
-  --background-dark: #1f2937;  /* Dark sections / footers */
-  --section-bg: #ffffff;       /* Content sections background */
+  --accent:        #FF6B6B;  /* special color for small highlights */
+  --accent-hover:  #E55B5B;  /* darker accent when hovered */
+  --accent-contrast: #FFF1F0; /* light text on accent background */
 
-  /* ============================
-     ✍️ Text Colors
-     ============================ */
-  --text-dark: #2e2e2e;   /* Main text (instead of black) */
-  --text-medium: #555555; /* Paragraphs, secondary info */
-  --text-light: #777777;  /* Subtle text, placeholders */
+  /* 🧱 BACKGROUNDS
+     Where stuff sits: page, sections, cards */
+  --bg:           #F7F9FB;  /* main page background */
+  --bg-muted:     #EDF1F5;  /* slightly darker background for sections */
+  --surface:      #FFFFFF;  /* white boxes/cards */
+  --surface-2:    #F1F5F9;  /* slightly tinted card */
+  --surface-3:    #E0E7EF;  /* another card variation or banner */
 
-  /* ============================
-     🧩 Borders & Dividers
-     ============================ */
-  --border-light: #e0e0e0; /* Light gray borders */
-  --border-dark: #444444;  /* Dark borders for contrast */
+  /* 🏷️ HEADER / NAVBAR
+     Top bar of the site */
+  --header:           #FAFAFA;  /* background of header */
+  --header-contrast:  #1F2937;  /* color of text in header */
+  --header-muted:     #6B7280;  /* secondary text or icons in header */
 
-  /* ============================
-     ⚡ Status & Feedback Colors
-     ============================ */
-  --success: #4caf50; /* Success messages / confirmed actions */
-  --warning: #ff9800; /* Warnings / attention */
-  --error: #e74c3c;   /* Errors / alerts */
-  --info: #3498db;    /* Information / hints */
+  /* ✍️ TEXT COLORS
+     Colors used for writing text */
+  --text:         #1F2937;  /* normal text color */
+  --text-soft:    #4B5563;  /* softer text for subtitles or less important text */
+  --text-muted:   #9CA3AF;  /* faded text for hints or notes */
+  --text-on-dark: #F1F5F9;  /* text on dark background */
+
+  /* 🔲 BORDERS & FOCUS
+     Lines around boxes, forms, and focus glow */
+  --border:       #D1D5DB;  /* normal border color */
+  --border-strong:#9CA3AF;  /* stronger/darker border */
+  --ring:         var(--accent);  /* outline color when focused */
+  --focus:        var(--primary); /* glow for focused inputs or buttons */
+
+  /* ✅ STATUS COLORS
+     Colors for messages: success, warning, danger */
+  --success:      #16A34A;  /* green for success messages */
+  --success-soft: #DCFCE7;  
+  --success-text: #065F46;  
+
+  --warning:      #F59E0B;  /* orange for warnings */
+  --warning-soft: #FEF3C7;  
+  --warning-text: #78350F;  
+
+  --danger:       #E11D48;  /* red for errors */
+  --danger-soft:  #FEE2E2;  
+  --danger-text:  #881337;  
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-    background-color: var(--background-light);
-    /* margin: 0; */
-    padding: 0;
+body {
+  font-family: 'Poetsen', sans-serif;
+  background-color: var(--bg);
+  padding-top: 100px;
 }
-header{
-       background-color: var(--background-dark);
-    font-family: var(--font-primary);
-    color: var(--color-text);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.7rem;
-    border-radius: 10px;
-}
-header > * {
-    margin: 0 5%;
 
+a {
+  cursor: pointer;
 }
-img{
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--header-contrast);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  font-family: 'Poetsen', sans-serif;
+  border-radius: 110;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+header img {
+  max-height: 50px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 1000;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--primary-contrast);
+  background-color: var(--primary);
+  border-color: var(--primary-hover);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.content picture img {
+  width: 120px;
+  height: auto;
+}
+
+.intro {
+  max-width: 600px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
+  color: #339d5a;
+  margin-bottom: 0.5rem;
+}
+
+.intro p {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.highlight-security {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.highlight-privacy {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .intro {
     max-width: 100%;
-    height: 10vh;
-    background-color: var(--background-dark);
-}
-.logo{
-    width: 20%;
-    background-color: var(--background-dark);
-}
-.nav{
-    background-color: var(--background-dark);
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-
-
-}
-.nav > *{
-    background-color: var(--background-dark);
-    text-decoration: none;
-    font-size: 1.7rem;
-    
-    
-
+  }
 }
