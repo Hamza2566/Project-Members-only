@@ -56,11 +56,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+body, html {
+  font-family: "Cal Sans", sans-serif;
+  height: 100%; 
+  margin: 0;
+}
 
 body {
-  font-family: 'Poetsen', sans-serif;
   background-color: var(--bg);
   padding-top: 100px;
+    display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -68,10 +74,14 @@ a {
 }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Cal Sans", sans-serif;
+  
+  
 }
 
 header {
+  font-family: "Cal Sans", sans-serif;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -169,6 +179,83 @@ header img {
 .highlight-privacy {
   color: var(--primary);
   font-weight: 600;
+}
+.login-content{
+   flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  height: 75%;
+  width: 35%;
+  border: var(--border);
+  border-radius:10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
+.form-login{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-login label{
+  font-size: large;
+  font-weight: bold;
+  color: var(--text);
+}
+.form-login input{
+   width: 90%;
+  flex-shrink: 0; 
+  padding: 5%;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+.form-login input:focus{
+  border: 2px solid var(--primary);
+  outline: none;
+}
+.form-login .submit-button {
+  width: 50%; 
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  margin-left: 6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  color: var(--primary-contrast);     
+  background-color: var(--primary);   
+  border: 2px solid var(--primary);   
+  border-radius: 8px;                 
+
+  cursor: pointer;
+  transition: all 0.3s ease;          
+}
+
+ .submit-button:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: var(--primary-contrast);
+}
+
+ .submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+ .submit-button:disabled {
+  background-color: var(--border);
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
 }
 
 @media (max-width: 700px) {
