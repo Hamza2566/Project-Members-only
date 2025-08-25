@@ -10,5 +10,6 @@ posts.get('/',(req,res)=>{
 
 
 posts.post('/',(req,res)=>{
+      
 })
 export default posts

@@ -4,6 +4,7 @@ import signup from './routes/signup.js';
 import posts from './routes/posts.js';
 import passport from 'passport';
 import session from 'express-session';
+import newmessage from './routes/newmessage.js';
 
 const PORT = 2551;
 const app = express()
@@ -36,6 +37,7 @@ app.get('/',(req,res)=>{
 app.use('/login',login)
 app.use('/signup',signup)
 app.use('/posts',posts)
+app.use('/newmessage',newmessage)
 app.listen(PORT,()=>{
     console.log(`App is running on Port ${PORT}`);
 })

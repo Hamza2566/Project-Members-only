@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Messages</title>
-     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
     <!-- Your CSS -->
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-     <%- include('partials/header') %>
-     <% if (currentUser) { %>
-  <div class="welcome-msg">
-    Welcome back  <span class="currentUser">  <%=  currentUser.firstname %> 🎉   </span>
-  </div>
-<% } %>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include('partials/header') %> <% if (currentUser) { %>
+    <div class="welcome-msg">
+      Welcome back
+      <span class="currentUser"> <%= currentUser.firstname %> 🎉 </span>
+    </div>
+    <% } %>
 
-  
-
-    
-</body>
+    <div class="posts-content">
+      <div class="posts-div">
+        <div class="posts">
+          <div class="info">
+            <picture>
+              <img src="/67e1aa2bf819b18dedee67ba425d8800.jpg" alt="">
+            </picture>
+            <h2>@Hamza </h2>
+          </div>
+          <div class="title">
+            <div class="text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusantium impedit at illum illo quasi accusamus maiores, rerum
+              minus dolores, ab, tenetur odio obcaecati quis corrupti. Quidem
+              corporis fugit cum dolore! Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Inventore ratione omnis ipsam, laboriosam ipsum
+              fuga rem soluta error sequi placeat sit hic odio ullam dicta
+              distinctio. Quo minus culpa dolorem.
+            </div>
+          </div>
+          <div class="time"></div>
+        </div>
+        <div class="posts">
+          <div class="info"></div>
+          <div class="title">
+            <div class="text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusantium impedit at illum illo quasi accusamus maiores, rerum
+              minus dolores, ab, tenetur odio obcaecati quis corrupti. Quidem
+              corporis fugit cum dolore!
+            </div>
+          </div>
+          <div class="time"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

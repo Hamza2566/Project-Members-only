@@ -1,71 +1,72 @@
 :root {
   /* 🎨 MAIN COLORS
      These are the main colors you use for buttons, links, and highlights */
-  --primary:       #1F6F8B;  /* main color (deep teal) */
-  --primary-hover: #145C70;  /* slightly darker teal when you hover */
-  --primary-contrast: #E0F7FA; /* light color for text on primary buttons */
+  --primary: #1f6f8b; /* main color (deep teal) */
+  --primary-hover: #145c70; /* slightly darker teal when you hover */
+  --primary-contrast: #e0f7fa; /* light color for text on primary buttons */
 
-  --accent:        #FF6B6B;  /* special color for small highlights */
-  --accent-hover:  #E55B5B;  /* darker accent when hovered */
-  --accent-contrast: #FFF1F0; /* light text on accent background */
+  --accent: #ff6b6b; /* special color for small highlights */
+  --accent-hover: #e55b5b; /* darker accent when hovered */
+  --accent-contrast: #fff1f0; /* light text on accent background */
 
   /* 🧱 BACKGROUNDS
      Where stuff sits: page, sections, cards */
-  --bg:           #F7F9FB;  /* main page background */
-  --bg-muted:     #EDF1F5;  /* slightly darker background for sections */
-  --surface:      #FFFFFF;  /* white boxes/cards */
-  --surface-2:    #F1F5F9;  /* slightly tinted card */
-  --surface-3:    #E0E7EF;  /* another card variation or banner */
+  --bg: #f7f9fb; /* main page background */
+  --bg-muted: #edf1f5; /* slightly darker background for sections */
+  --surface: #ffffff; /* white boxes/cards */
+  --surface-2: #f1f5f9; /* slightly tinted card */
+  --surface-3: #e0e7ef; /* another card variation or banner */
 
   /* 🏷️ HEADER / NAVBAR
      Top bar of the site */
-  --header:           #FAFAFA;  /* background of header */
-  --header-contrast:  #1F2937;  /* color of text in header */
-  --header-muted:     #6B7280;  /* secondary text or icons in header */
+  --header: #fafafa; /* background of header */
+  --header-contrast: #1f2937; /* color of text in header */
+  --header-muted: #6b7280; /* secondary text or icons in header */
 
   /* ✍️ TEXT COLORS
      Colors used for writing text */
-  --text:         #1F2937;  /* normal text color */
-  --text-soft:    #4B5563;  /* softer text for subtitles or less important text */
-  --text-muted:   #9CA3AF;  /* faded text for hints or notes */
-  --text-on-dark: #F1F5F9;  /* text on dark background */
+  --text: #1f2937; /* normal text color */
+  --text-soft: #4b5563; /* softer text for subtitles or less important text */
+  --text-muted: #9ca3af; /* faded text for hints or notes */
+  --text-on-dark: #f1f5f9; /* text on dark background */
 
   /* 🔲 BORDERS & FOCUS
      Lines around boxes, forms, and focus glow */
-  --border:       #D1D5DB;  /* normal border color */
-  --border-strong:#9CA3AF;  /* stronger/darker border */
-  --ring:         var(--accent);  /* outline color when focused */
-  --focus:        var(--primary); /* glow for focused inputs or buttons */
+  --border: #d1d5db; /* normal border color */
+  --border-strong: #9ca3af; /* stronger/darker border */
+  --ring: var(--accent); /* outline color when focused */
+  --focus: var(--primary); /* glow for focused inputs or buttons */
 
   /* ✅ STATUS COLORS
      Colors for messages: success, warning, danger */
-  --success:      #16A34A;  /* green for success messages */
-  --success-soft: #DCFCE7;  
-  --success-text: #065F46;  
+  --success: #16a34a; /* green for success messages */
+  --success-soft: #dcfce7;
+  --success-text: #065f46;
 
-  --warning:      #F59E0B;  /* orange for warnings */
-  --warning-soft: #FEF3C7;  
-  --warning-text: #78350F;  
+  --warning: #f59e0b; /* orange for warnings */
+  --warning-soft: #fef3c7;
+  --warning-text: #78350f;
 
-  --danger:       #E11D48;  /* red for errors */
-  --danger-soft:  #FEE2E2;  
-  --danger-text:  #881337;  
+  --danger: #e11d48; /* red for errors */
+  --danger-soft: #fee2e2;
+  --danger-text: #881337;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body, html {
+body,
+html {
   font-family: "Cal Sans", sans-serif;
-  height: 100%; 
+  height: 100%;
   margin: 0;
 }
 
 body {
   background-color: var(--bg);
   padding-top: 100px;
-    display: flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -73,10 +74,10 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Cal Sans", sans-serif;
-  
-  
 }
 
 header {
@@ -95,7 +96,7 @@ header {
   padding: 0.7rem 2rem;
   border-bottom: 1px solid var(--border);
   z-index: 1000;
-  font-family: 'Poetsen', sans-serif;
+  font-family: "Poetsen", sans-serif;
   border-radius: 110;
 }
 .logo {
@@ -139,7 +140,7 @@ header img {
   padding: 2rem;
   background-color: var(--bg);
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -155,14 +156,14 @@ header img {
 }
 
 .intro h1 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 2rem;
   color: #339d5a;
   margin-bottom: 0.5rem;
 }
 
 .intro p {
-  font-family: 'Cal Sans', sans-serif;
+  font-family: "Cal Sans", sans-serif;
   font-size: 1rem;
   color: var(--text-soft);
   line-height: 1.6;
@@ -192,7 +193,7 @@ header img {
   width: 35%;
   border: var(--border);
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,14 +213,12 @@ header img {
   gap: 10px;
 }
 
-
 .form-login label,
 .form-signup label {
   font-size: large;
   font-weight: bold;
   color: var(--text);
 }
-
 
 .form-login input,
 .form-signup input {
@@ -238,7 +237,6 @@ header img {
   border: 2px solid var(--primary);
   outline: none;
 }
-
 
 .form-login .submit-button,
 .form-signup .submit-button {
@@ -283,7 +281,9 @@ header img {
   display: block;
 }
 .welcome-msg {
-  background: var(--bg);   /* green background */
+  position: fixed;
+  left: 35%;
+  background: var(--bg); /* green background */
   color: var(--text);
   padding: 10px 20px;
   border-radius: 8px;
@@ -297,18 +297,88 @@ header img {
 
 /* Animation keyframes */
 @keyframes fadeInOut {
-  0% { opacity: 0; }      /* start invisible */
-  20% { opacity: 1; }     /* fade in gradually */
-  80% { opacity: 1; }     /* stay visible */
-  100% { opacity: 0; }    /* fade out gradually */
+  0% {
+    opacity: 0;
+  } /* start invisible */
+  20% {
+    opacity: 1;
+  } /* fade in gradually */
+  80% {
+    opacity: 1;
+  } /* stay visible */
+  100% {
+    opacity: 0;
+  } /* fade out gradually */
 }
 
-
-.currentUser{
+.currentUser {
   color: red;
 }
 
+.posts-content {
+  padding: 20px;
+  width: 80%;
+  flex: 1;
+  border-radius: 5px;
+  color: var(--text);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
 
+.posts-div {
+  display: flex;
+  border-radius: 10px;
+  width: 95%;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 30px;
+}
+.posts {
+  padding: 20px;
+  width: 70%;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  color: var(--text);
+  max-height:  21.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+}
+.posts > * {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.text {
+  padding: 15px; 
+  flex: 0 1 auto; 
+  word-wrap: break-word; 
+}
+
+.info {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.info picture{
+  width: 10%;
+}
+.info picture img{
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  object-fit: cover;
+  margin-top: 5px;
+}
+
+.time {
+  flex-shrink: 0;
+  padding: 20px;
+}
 
 @media (max-width: 700px) {
   .content {
