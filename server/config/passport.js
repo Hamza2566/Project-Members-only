@@ -46,10 +46,7 @@ Passport.deserializeUser(async (id, done) => {
       "SELECT id, firstname, email FROM users WHERE id = $1",
       [id]
     );
-    const user = rows[0] || null;
-    console.log('deserializeuser',user);
-
-    
+    const user = rows[0] || null;    
     done(null, user);
   } catch (err) {
     done(err);
