@@ -81,7 +81,6 @@ h1, h2, h3 {
 
 header {
   font-family: "Cal Sans", sans-serif;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -99,12 +98,10 @@ header {
   font-family: 'Poetsen', sans-serif;
   border-radius: 110;
 }
-
 .logo {
   width: 150px;
   height: auto;
 }
-
 header img {
   max-height: 50px;
   object-fit: contain;
@@ -180,37 +177,54 @@ header img {
   color: var(--primary);
   font-weight: 600;
 }
-.login-content{
-   flex: 1; 
+.login-content,
+.signup-content {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form{
+
+/* Container boxes */
+.form-log,
+.form-sign-div {
   height: 75%;
   width: 35%;
   border: var(--border);
-  border-radius:10px;
+  border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2%;
 }
-.form-login{
+
+.form-sign-div {
+  height: 100%;
+}
+
+/* Forms */
+.form-login,
+.form-signup {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.form-login label{
+
+
+.form-login label,
+.form-signup label {
   font-size: large;
   font-weight: bold;
   color: var(--text);
 }
-.form-login input{
-   width: 90%;
-  flex-shrink: 0; 
+
+
+.form-login input,
+.form-signup input {
+  width: 90%;
+  flex-shrink: 0;
   padding: 5%;
   color: var(--text);
   border: 1px solid var(--border);
@@ -218,45 +232,83 @@ header img {
   font-size: large;
   font-weight: bold;
 }
-.form-login input:focus{
+
+.form-login input:focus,
+.form-signup input:focus {
   border: 2px solid var(--primary);
   outline: none;
 }
-.form-login .submit-button {
-  width: 50%; 
+
+
+.form-login .submit-button,
+.form-signup .submit-button {
+  width: 50%;
   padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  margin-left: 6rem;
+  margin: 1rem auto 0; /* centers button horizontally */
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-
-  color: var(--primary-contrast);     
-  background-color: var(--primary);   
-  border: 2px solid var(--primary);   
-  border-radius: 8px;                 
-
+  color: var(--primary-contrast);
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;          
+  transition: all 0.3s ease;
 }
-
- .submit-button:hover {
+.submit-button:hover {
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
   color: var(--primary-contrast);
 }
-
- .submit-button:focus {
+.submit-button:focus {
   outline: none;
   box-shadow: 0 0 0 4px var(--ring);
 }
 
- .submit-button:disabled {
+.submit-button:disabled {
   background-color: var(--border);
   border-color: var(--border);
   color: var(--text-muted);
   cursor: not-allowed;
 }
+.error-messages {
+  color: red;
+  font-size: larger;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  display: block;
+}
+.welcome-msg {
+  background: var(--bg);   /* green background */
+  color: var(--text);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  margin: 10px 0;
+  opacity: 0; /* start invisible */
+  animation: fadeInOut 5s forwards; /* run animation over 5s */
+}
+
+/* Animation keyframes */
+@keyframes fadeInOut {
+  0% { opacity: 0; }      /* start invisible */
+  20% { opacity: 1; }     /* fade in gradually */
+  80% { opacity: 1; }     /* stay visible */
+  100% { opacity: 0; }    /* fade out gradually */
+}
+
+
+.currentUser{
+  color: red;
+}
+
+
 
 @media (max-width: 700px) {
   .content {
