@@ -13,6 +13,20 @@
 </head>
 <body>
      <%- include('partials/header') %>
+     <div class="membership-content">
+        <h2>❓ Question</h2>
+        <hr>
+        <h3>💻 What was the name of the first computer virus for MS-DOS? 🦠</h3>
+        <div class="membership-form">
+            <form action="/membership" method="post">
+                <h2>Whats is the Passcode</h2>
+                <label for="Passcode">Passcode</label>
+                <input type="text" name="Passcode" id="Passcode" class="Passcode">
+                <input type="submit" value="submit" id="submit" class="submit">
+                <input type="hidden" name="userId" value="<%= currentUser.id %>">
+            </form>
+        </div>
+     </div>
     
 </body>
 </html>

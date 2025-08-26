@@ -11,12 +11,12 @@ Passport.use(
     ,async (email, password, done) => {
     try {
       const { rows } = await db.query(
-        "SELECT id,  email, password_hash FROM users WHERE email = $1",
+        "SELECT id,  email, password_hash , membership_status FROM users WHERE email = $1",
         [email]
       );
       const user = rows[0];
       console.log(user);
-      
+            
       if (!user) {
         console.log({ message: "Incorrect email" });
         
@@ -43,7 +43,7 @@ Passport.serializeUser((user, done) => {
 Passport.deserializeUser(async (id, done) => {
   try {
     const { rows } = await db.query(
-      "SELECT id, firstname, email FROM users WHERE id = $1",
+      "SELECT id, firstname, email , membership_status FROM users WHERE id = $1",
       [id]
     );
     const user = rows[0] || null;    

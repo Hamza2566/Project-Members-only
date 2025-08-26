@@ -21,7 +21,7 @@
       <span class="currentUser"> <%= currentUser.firstname %> 🎉 </span>
     </div>
     <% } %>
-
+    
     <div class="posts-content">
   <div class="posts-div">
     <% if (messages.length > 0) { %>
@@ -30,9 +30,10 @@
           <div class="info">
             <picture>
               <img src="/67e1aa2bf819b18dedee67ba425d8800.jpg" alt="">
+
             </picture>
             <h2>
-  <% if (message.membership_status) { %>
+  <% if (currentUser.membership_status) { %>
     @ <%= message.firstname %>
   <% } else { %>
     @ ########
@@ -48,7 +49,7 @@
           </div>
           <div class="time">
            <div class="time">
-  <% if (message.membership_status) { %>
+  <% if (currentUser.membership_status) { %>
     <h4>
       created at 
       <%= new Date(message.created_at).toLocaleString("en-GB", { 

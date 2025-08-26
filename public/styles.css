@@ -321,7 +321,10 @@ header img {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
 }
+
 
 .posts-div {
   display: flex;
@@ -343,6 +346,7 @@ header img {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+
 }
 .posts > * {
   border: 1px solid var(--border);
@@ -373,7 +377,7 @@ header img {
 
 .time {
   flex-shrink: 0;
-  padding: 20px;
+  padding: 10px;
 }
 .message-content {
   display: flex;
@@ -447,6 +451,51 @@ header img {
 .message-title{
   border: 1px solid var(--border);
   border-radius:5px ;
+}
+.membership-content{
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.membership-form{
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  width: 40%;
+  height: 45vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.membership-form form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.membership-form .submit{
+  width: 30%;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  
+}
+.membership-form input{
+  width: 90%;
+  flex-shrink: 0;
+  padding: 5%;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+.membership-form input:focus{
+    border: 2px solid var(--primary);
+  outline: none;
 }
 @media (max-width: 700px) {
   .content {

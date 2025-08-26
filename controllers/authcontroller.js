@@ -18,7 +18,7 @@ export const signupfunction = async (req,res) =>{
       const user = `INSERT INTO users (firstname,lastname,email,password_hash) VALUES ($1,$2,$3,$4)`
       const values = [firstname,lastname,email,hashedpassword]
       const query = await db.query(user,values)
-      console.log(query);
+      // console.log(query);
   } catch (error) {
     console.log(error);
     
