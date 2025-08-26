@@ -1,4 +1,5 @@
 import express from 'express'
+import db from '../server/config/db.js'
 
 
 
@@ -13,10 +14,17 @@ const NewmessageF = (req,res)=>{
 }
 
 
-const getmessages = (req,res)=>{
+export const getmessages = async (req,res)=>{
     try {
-    const messages = `SELECT `
+    const messages = `SELECT firstname, title, text, messages.created_at,membership_status
+FROM messages
+INNER JOIN users
+  ON messages.created_by = users.id;
+`
+    const query = await db.query(messages)
+    return query
+    
     } catch (error) {
-        
+        return error
     }
 }
