@@ -6,8 +6,7 @@ const posts = express.Router()
 
 posts.get('/', async(req,res)=>{
       const {rows} = await getmessages()
-      console.log(rows);
-      res.render('posts',{messages:rows})
+      res.render('posts',{messages:rows,})
 })
 
 

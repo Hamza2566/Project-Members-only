@@ -1,21 +1,106 @@
- <header>
-        <div class="logo">
-            <a href="/">
-                <img src="/cyber-security.png" alt="Logo">
-            </a>
-        </div>
-        
-        <div class="nav">
-            <a href="/posts">Posts</a>
-            <a href="/login">Sign In</a>
-            <a href="/signup">Sign Up</a>
-        </div>
-        <% if(currentUser){%>
-            <div class="nav">
-                <a href="/newmessage">NewMessage</a>
-                <a href="/membership">Membership</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            </div>
-        <%}%>
-        
-    </header>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      color: #1f6f8b;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    /* Nav styling */
+    .nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav a {
+
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Burger button */
+    .nav-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+     color: #1f6f8b;
+      cursor: pointer;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 1rem;
+        color: #1f6f8b;
+
+        width: 200px;
+      }
+
+      .nav.show {
+        display: flex;
+        color: #1f6f8b;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/">
+        <img src="/cyber-security.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Burger Button -->
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <!-- Nav links (merged into one) -->
+    <div class="nav">
+      <a href="/posts">Posts</a>
+      <a href="/login">Sign In</a>
+      <a href="/signup">Sign Up</a>
+      <% if(currentUser){ %>
+        <a href="/newmessage">NewMessage</a>
+        <a href="/membership">Membership</a>
+      <% } %>
+    </div>
+  </header>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

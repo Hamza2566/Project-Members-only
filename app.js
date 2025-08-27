@@ -29,7 +29,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());  
 app.use((req, res, next) => {
-  res.locals.currentUser = req.user;
+  res.locals.currentUser = req.user || res.locals.currentUser === 'NewUser';
   next();
 });
 app.get('/',(req,res)=>{

@@ -27,46 +27,36 @@
     <% if (messages.length > 0) { %>
       <% messages.forEach(message => { %>
         <div class="posts">
-          <div class="info">
-            <picture>
-              <img src="/67e1aa2bf819b18dedee67ba425d8800.jpg" alt="">
+  <div class="info">
+    <div class="user">
+      <picture>
+        <img src="/67e1aa2bf819b18dedee67ba425d8800.jpg" alt="">
+      </picture>
+      <h3>
+        <% if (currentUser.membership_status) { %>
+          @ <%= message.firstname %>
+        <% } else { %>
+          @ ########
+        <% } %>
+      </h3>
+    </div>
+    <span class="time">
+      <% if (currentUser.membership_status) { %>
+        <%= new Date(message.created_at).toLocaleString("en-GB", { 
+              year: "numeric", month: "2-digit", day: "2-digit", 
+              hour: "2-digit", minute: "2-digit" }) %>
+      <% } else { %>
+       created at ########
+      <% } %>
+    </span>
+  </div>
 
-            </picture>
-            <h2>
-  <% if (currentUser.membership_status) { %>
-    @ <%= message.firstname %>
-  <% } else { %>
-    @ ########
-  <% } %>
-</h2>
-                    
-          </div>
-          <div class="title">
-            <h2 class="message-title"><%= message.title %></h2>
-            <div class="text">
-              <%= message.text %>
-            </div>
-          </div>
-          <div class="time">
-           <div class="time">
-  <% if (currentUser.membership_status) { %>
-    <h4>
-      created at 
-      <%= new Date(message.created_at).toLocaleString("en-GB", { 
-            year: "numeric", 
-            month: "2-digit", 
-            day: "2-digit", 
-            hour: "2-digit", 
-            minute: "2-digit" 
-      }) %>
-    </h4>
-  <% } else { %>
-    <h4>created at ########</h4>
-  <% } %>
+  <div class="title">
+    <h2 class="message-title"><%= message.title %></h2>
+    <div class="text"><%= message.text %></div>
+  </div>
 </div>
 
-          </div>
-        </div>
       <% }) %>
     <% } else { %>
       <p>No messages yet.</p>

@@ -1,61 +1,57 @@
 :root {
-  /* 🎨 MAIN COLORS
-     These are the main colors you use for buttons, links, and highlights */
-  --primary: #1f6f8b; /* main color (deep teal) */
-  --primary-hover: #145c70; /* slightly darker teal when you hover */
-  --primary-contrast: #e0f7fa; /* light color for text on primary buttons */
+  /* 🎨 MAIN COLORS */
+  --primary: #1f6f8b;
+  --primary-hover: #145c70;
+  --primary-contrast: #e0f7fa;
 
-  --accent: #ff6b6b; /* special color for small highlights */
-  --accent-hover: #e55b5b; /* darker accent when hovered */
-  --accent-contrast: #fff1f0; /* light text on accent background */
+  --accent: #ff6b6b;
+  --accent-hover: #e55b5b;
+  --accent-contrast: #fff1f0;
 
-  /* 🧱 BACKGROUNDS
-     Where stuff sits: page, sections, cards */
-  --bg: #f7f9fb; /* main page background */
-  --bg-muted: #edf1f5; /* slightly darker background for sections */
-  --surface: #ffffff; /* white boxes/cards */
-  --surface-2: #f1f5f9; /* slightly tinted card */
-  --surface-3: #e0e7ef; /* another card variation or banner */
+  /* 🧱 BACKGROUNDS */
+  --bg: #f7f9fb;
+  --bg-muted: #edf1f5;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --surface-3: #e0e7ef;
 
-  /* 🏷️ HEADER / NAVBAR
-     Top bar of the site */
-  --header: #fafafa; /* background of header */
-  --header-contrast: #1f2937; /* color of text in header */
-  --header-muted: #6b7280; /* secondary text or icons in header */
+  /* 🏷️ HEADER / NAVBAR */
+  --header: #fafafa;
+  --header-contrast: #1f2937;
+  --header-muted: #6b7280;
 
-  /* ✍️ TEXT COLORS
-     Colors used for writing text */
-  --text: #1f2937; /* normal text color */
-  --text-soft: #4b5563; /* softer text for subtitles or less important text */
-  --text-muted: #9ca3af; /* faded text for hints or notes */
-  --text-on-dark: #f1f5f9; /* text on dark background */
+  /* ✍️ TEXT COLORS */
+  --text: #1f2937;
+  --text-soft: #4b5563;
+  --text-muted: #9ca3af;
+  --text-on-dark: #f1f5f9;
 
-  /* 🔲 BORDERS & FOCUS
-     Lines around boxes, forms, and focus glow */
-  --border: #d1d5db; /* normal border color */
-  --border-strong: #9ca3af; /* stronger/darker border */
-  --ring: var(--accent); /* outline color when focused */
-  --focus: var(--primary); /* glow for focused inputs or buttons */
+  /* 🔲 BORDERS & FOCUS */
+  --border: #d1d5db;
+  --border-strong: #9ca3af;
+  --ring: var(--accent);
+  --focus: var(--primary);
 
-  /* ✅ STATUS COLORS
-     Colors for messages: success, warning, danger */
-  --success: #16a34a; /* green for success messages */
+  /* ✅ STATUS COLORS */
+  --success: #16a34a;
   --success-soft: #dcfce7;
   --success-text: #065f46;
 
-  --warning: #f59e0b; /* orange for warnings */
+  --warning: #f59e0b;
   --warning-soft: #fef3c7;
   --warning-text: #78350f;
 
-  --danger: #e11d48; /* red for errors */
+  --danger: #e11d48;
   --danger-soft: #fee2e2;
   --danger-text: #881337;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body,
 html {
   font-family: "Cal Sans", sans-serif;
@@ -72,17 +68,12 @@ body {
 
 a {
   cursor: pointer;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Cal Sans", sans-serif;
+  text-decoration: none;
 }
 
 header {
-  font-family: "Cal Sans", sans-serif;
   position: fixed;
+  color: var(--primary);
   top: 0;
   left: 0;
   width: 100%;
@@ -93,16 +84,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--border);
   z-index: 1000;
-  font-family: "Poetsen", sans-serif;
-  border-radius: 110;
 }
+
 .logo {
   width: 150px;
   height: auto;
 }
+
 header img {
   max-height: 50px;
   object-fit: contain;
@@ -115,9 +106,8 @@ header img {
 
 .nav a {
   color: var(--primary);
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 1000;
+  font-size: 1rem;
+  font-weight: 600;
   padding: 0.5rem 1rem;
   border: 2px solid var(--primary);
   border-radius: 8px;
@@ -130,24 +120,92 @@ header img {
   border-color: var(--primary-hover);
 }
 
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  z-index: 1100;
+}
+
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 3rem auto;
   padding: 2rem;
   background-color: var(--bg);
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
-  flex-direction: row;
 }
 
 .content picture img {
-  width: 120px;
+  width: 40px;
   height: auto;
+}
+
+.posts {
+  width: 60%;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #ddd);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-family: sans-serif;
+}
+
+.posts .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.posts .user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.posts .user picture img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.posts .user h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.posts .time {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.posts .title {
+  margin-top: 0.5rem;
+}
+
+.posts .message-title {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.posts .text {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
 }
 
 .intro {
@@ -163,71 +221,36 @@ header img {
 }
 
 .intro p {
-  font-family: "Cal Sans", sans-serif;
   font-size: 1rem;
   color: var(--text-soft);
   line-height: 1.6;
 }
 
-.highlight-security {
-  color: var(--danger);
-  font-weight: 600;
-}
-
-.highlight-privacy {
-  color: var(--primary);
-  font-weight: 600;
-}
-.login-content,
-.signup-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .form-log,
 .form-sign-div {
-  height: 75%;
-  width: 35%;
-  border: var(--border);
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2%;
-}
-
-.form-sign-div {
-  height: 100%;
+  padding: 2rem;
+  margin: 1rem auto;
 }
 
 .form-login,
 .form-signup {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.form-login label,
-.form-signup label {
-  font-size: large;
-  font-weight: bold;
-  color: var(--text);
-}
-
 .form-login input,
 .form-signup input {
-  width: 90%;
-  flex-shrink: 0;
-  padding: 5%;
+  padding: 0.75rem 1rem;
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 10px;
-  font-size: large;
-  font-weight: bold;
+  font-size: 1rem;
 }
 
 .form-login input:focus,
@@ -236,14 +259,12 @@ header img {
   outline: none;
 }
 
-.form-login .submit-button,
-.form-signup .submit-button {
+.submit-button {
   width: 50%;
   padding: 0.75rem 1.5rem;
   margin: 1rem auto 0;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
   color: var(--primary-contrast);
   background-color: var(--primary);
   border: 2px solid var(--primary);
@@ -251,259 +272,261 @@ header img {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .submit-button:hover {
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
-  color: var(--primary-contrast);
-}
-.submit-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--ring);
-}
-
-.submit-button:disabled {
-  background-color: var(--border);
-  border-color: var(--border);
-  color: var(--text-muted);
-  cursor: not-allowed;
-}
-.error-messages {
-  color: red;
-  font-size: larger;
-}
-
-.error {
-  color: red;
-  font-size: 0.85rem;
-  margin-bottom: 8px;
-  display: block;
-}
-.welcome-msg {
-  position: fixed;
-  left: 35%;
-  background: var(--bg);
-  color: var(--text);
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: x-large;
-  text-align: center;
-  margin: 10px 0;
-  opacity: 0;
-  animation: fadeInOut 5s forwards;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.currentUser {
-  color: red;
-}
-
-.posts-content {
-  padding: 20px;
-  width: 80%;
-  flex: 1;
-  border-radius: 5px;
-  color: var(--text);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-
-.posts-div {
-  display: flex;
-  border-radius: 10px;
-  width: 95%;
-  overflow: hidden;
-  flex-direction: column;
-  gap: 30px;
-}
-.posts {
-  padding: 20px;
-  width: 70%;
-  background-color: var(--surface-2);
-  border: 1px solid var(--border-strong);
-  border-radius: 10px;
-  color: var(--text);
-  max-height: 21.875rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-
-}
-.posts > * {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
-
-.text {
-  padding: 15px;
-  flex: 0 1 auto;
-  word-wrap: break-word;
-}
-
-.info {
-  height: 60px;
-  display: flex;
-  align-items: center;
-}
-.info picture {
-  width: 10%;
-}
-.info picture img {
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: multiply;
-  object-fit: cover;
-  margin-top: 5px;
-}
-
-.time {
-  flex-shrink: 0;
-  padding: 10px;
 }
 .message-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex: 1;
+  box-sizing: border-box;
 }
+
 .message-form {
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  width: 40%;
-  height: 70vh;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.form-message {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  gap: 5px;
-}
-.form-message > * {
-  width: 60%;
-}
-.title {
-  width: 90%;
-  flex-shrink: 0;
-  padding: 3%;
-  color: var(--text);
+  max-width: 760px;
+  background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: large;
-  font-weight: bold;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
 }
-.title:focus {
-  border: 2px solid var(--primary);
-  outline: none;
-}
-.textarea {
-  height: 120px;
-  width: 90%;
-  margin-bottom: 20px;
-  flex-shrink: 0;
-  padding: 3%;
+
+.message-form h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
   color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: large;
-  font-weight: bold;
 }
-.textarea:focus {
-  border: 2px solid var(--primary);
-  outline: none;
+
+.message-form .form-message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
-.submit {
-  width: 50%;
-  padding: 0.75rem 1.5rem;
-  margin: 1rem auto 0;
-  font-size: 1rem;
+
+.message-form .form-message > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-form label {
   font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--primary-contrast);
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.message-title{
-  border: 1px solid var(--border);
-  border-radius:5px ;
-}
-.membership-content{
-  width: 100%;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.membership-form{
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-  width: 40%;
-  height: 45vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.membership-form form{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.membership-form .submit{
-  width: 30%;
-  text-align: center;
-  padding: 0.75rem 1.5rem;
-  color: white;
-  
-}
-.membership-form input{
-  width: 90%;
-  flex-shrink: 0;
-  padding: 5%;
   color: var(--text);
+  font-size: 0.95rem;
+}
+
+.message-form input.title,
+.message-form input[type="text"],
+.message-form .title {
+  padding: 0.85rem 1rem;
   border: 1px solid var(--border);
   border-radius: 10px;
-  font-size: large;
-  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
 }
-.membership-form input:focus{
-    border: 2px solid var(--primary);
-  outline: none;
+
+.message-form .textarea {
+  padding: 1rem;
+  min-height: 180px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
 }
-@media (max-width: 700px) {
+
+.message-form .submit,
+.message-form input[type="submit"] {
+  width: 100%;
+  max-width: 260px;
+  align-self: center;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.message-form .submit:hover,
+.message-form input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.message-form input[type="hidden"] {
+  display: none;
+}
+
+.membership-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.membership-form {
+  width: 100%;
+  max-width: 540px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.membership-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.membership-form label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.membership-form input.Passcode,
+.membership-form input[type="text"],
+.membership-form .Passcode {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.membership-form .submit,
+.membership-form input[type="submit"] {
+  width: 100%;
+  max-width: 240px;
+  align-self: center;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.membership-form .submit:hover,
+.membership-form input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.membership-form input[type="hidden"] {
+  display: none;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .message-form { padding: 1.25rem; }
+  .message-form .textarea { min-height: 160px; }
+  .membership-form { padding: 1rem; }
+}
+
+@media (max-width: 600px) {
+  body { padding-top: 70px; }
+  .message-content { padding: 1.25rem 0.75rem; margin: 2.25rem auto; }
+  .message-form { padding: 1rem; border-radius: 10px; }
+  .message-form h2 { font-size: 1.1rem; }
+  .message-form .textarea { min-height: 140px; }
+  .membershp-form { padding: 0.9rem; }
+  .membership-form h2 { font-size: 1.05rem; }
+  .message-form .submit,
+  .membership-form .submit { max-width: 100%; }
+}
+
+
+@media (max-width: 992px) {
+  header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .posts {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: var(--header);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav.show {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
   .content {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
   }
-  .intro {
-    max-width: 100%;
+  .posts {
+    width: 95%;
+  }
+  .intro h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro h1 {
+    font-size: 1.3rem;
+  }
+  .intro p {
+    font-size: 0.9rem;
+  }
+  header img {
+    max-height: 40px;
+  }
+  .submit-button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  .posts .user picture img {
+    width: 36px;
+    height: 36px;
+  }
+  .posts .message-title {
+    font-size: 1rem;
+  }
+  .posts .text {
+    font-size: 0.9rem;
   }
 }
