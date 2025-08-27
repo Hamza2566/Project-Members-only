@@ -6,10 +6,11 @@ import passport from 'passport';
 import session from 'express-session';
 import newmessage from './routes/newmessage.js';
 import membership from './routes/members.js';
+import path from 'path'
 
 const PORT = process.env.PORT|| 3000;
 const app = express()
-app.set('views','views')
+app.set('views', path.join(path.resolve(), 'views'));
 app.set('view engine','ejs')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
