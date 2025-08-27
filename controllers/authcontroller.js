@@ -14,11 +14,9 @@ export const signupfunction = async (req,res) =>{
       const {firstname,lastname,email,password} = req.body
     const salt = await bcrypt.genSalt(10)
     const hashedpassword = await  bcrypt.hash(password,salt)
-    
       const user = `INSERT INTO users (firstname,lastname,email,password_hash) VALUES ($1,$2,$3,$4)`
       const values = [firstname,lastname,email,hashedpassword]
       const query = await db.query(user,values)
-      // console.log(query);
       return res.redirect('/posts')
   } catch (error) {
     console.log(error);

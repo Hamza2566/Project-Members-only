@@ -8,7 +8,9 @@ const signup = express.Router()
 signup.get('/',(req,res)=>{
       res.render('signup')
 })
-signup.post('/',validateRegister,signupfunction)
+signup.post('/',validateRegister,signupfunction, async(req,res)=>{
+      const result = await signupfunction()
+})
 
 
 
