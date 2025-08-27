@@ -24,6 +24,7 @@
     
     <div class="posts-content">
   <div class="posts-div">
+    <% = message.length%>
     <% if ( messages &&  messages.length > 0) { %>
       <% messages.forEach(message => { %>
         <div class="posts">
@@ -33,7 +34,7 @@
         <img src="/67e1aa2bf819b18dedee67ba425d8800.jpg" alt="">
       </picture>
       <h3>
-        <% if (currentUser.membership_status) { %>
+        <% if (  currentUser && currentUser.membership_status) { %>
           @ <%= message.firstname %>
         <% } else { %>
           @ ########
@@ -41,7 +42,7 @@
       </h3>
     </div>
     <span class="time">
-      <% if (currentUser.membership_status) { %>
+      <% if (currentUser && currentUser.membership_status) { %>
         <%= new Date(message.created_at).toLocaleString("en-GB", { 
               year: "numeric", month: "2-digit", day: "2-digit", 
               hour: "2-digit", minute: "2-digit" }) %>

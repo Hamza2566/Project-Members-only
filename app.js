@@ -7,7 +7,7 @@ import session from 'express-session';
 import newmessage from './routes/newmessage.js';
 import membership from './routes/members.js';
 
-const PORT = 2551;
+const PORT = process.env.PORT|| 3000;
 const app = express()
 app.set('views','views')
 app.set('view engine','ejs')
