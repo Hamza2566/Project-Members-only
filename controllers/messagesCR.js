@@ -14,17 +14,17 @@ const NewmessageF = (req,res)=>{
 }
 
 
-export const getmessages = async (req,res)=>{
-    try {
-    const messages = `SELECT firstname, title, text, messages.created_at,membership_status
-FROM messages
-INNER JOIN users
-  ON messages.created_by = users.id;
-`
-    const query = await db.query(messages)
-    return query
-    
-    } catch (error) {
-        return error
-    }
-}
+export const getmessages = async () => {
+  try {
+    const sql = `
+      SELECT firstname, title, text, messages.created_at, membership_status
+      FROM messages
+      INNER JOIN users ON messages.created_by = users.id;
+    `;
+    const { rows } = await db.query(sql);
+    return rows;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
