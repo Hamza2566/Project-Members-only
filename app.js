@@ -38,7 +38,7 @@ app.get('/',(req,res)=>{
 app.use('/login',login)
 app.use('/signup',signup)
 app.use('/posts',posts)
-app.use('/newmessage',newmessage)
+app.use('/newMessage',newmessage)
 app.use('/membership',membership)
 app.listen(PORT,()=>{
     console.log(`App is running on Port ${PORT}`);
