@@ -6,10 +6,7 @@ import { getmessages } from '../controllers/messagesCR.js'
 const newmessage = express.Router()
 
 newmessage.get('/',async (req,res)=>{
-      res.render('newmessage')
-      const result  = await getmessages() 
-      console.log(result);
-      
+      res.render('Newmessage')
 })
 newmessage.post('/', async (req,res)=>{
    const { title, text, userId } = req.body;
