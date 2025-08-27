@@ -19,6 +19,7 @@ export const signupfunction = async (req,res) =>{
       const values = [firstname,lastname,email,hashedpassword]
       const query = await db.query(user,values)
       // console.log(query);
+      return res.redirect('/posts')
   } catch (error) {
     console.log(error);
     
